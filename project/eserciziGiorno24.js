@@ -68,7 +68,6 @@ flexContainer.style.display = "flex";
 flexContainer.style.justifyContent = "center";
 flexContainer.style.alignItems = "center";
 flexContainer.style.width = "85%";
-
 flexContainer.style.height = "73vh";
 
 let flexImage = document.querySelector(".flex-item");
@@ -76,6 +75,8 @@ flexImage.style.display = "flex";
 flexImage.style.justifyContent = "center";
 flexImage.style.alignItems = "center";
 flexImage.style.padding = "40px";
+
+flexImage.style.transform = `scale(0.8)`;
 
 let centered = document.querySelector(".centered");
 centered.style.display = "flex";
@@ -88,8 +89,13 @@ function calcolaPeso() {
     const gravita = parseFloat(selectedOption.value);
     const massa = parseFloat(massInput.value);
 
-    if (isNaN(massa)) {
+    if ((isNaN(massa)) || (massa < 0)) {
         alert("Inserisci una massa valida in Kilogrammi.");
+        return;
+    }
+
+    if (isNaN(gravita)) {
+        alert("Seleziona un Pianeta.");
         return;
     }
 
@@ -128,8 +134,8 @@ function calcolaPeso() {
     secondoP.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
     secondoP.style.padding = "10px";
     secondoP.style.fontSize = "50px";
-    secondoP.style.width = "150px";
-    secondoP.style.height = "150px";
+    secondoP.style.width = "300px";
+    secondoP.style.height = "300px";
     secondoP.style.borderRadius = "50%";
     secondoP.style.display = "flex";
     secondoP.style.justifyContent = "center";
